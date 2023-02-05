@@ -149,22 +149,9 @@ function nextQuestion() {
 }
 
 function makeCard(devTeam) {
-  // if(devTeam[0]) {
-  //   ` <div class="card" style="width: 18rem;">
-  //       <div class="card-body title-color">
-  //           <h4>${devTeam[0].name}</h4>
-  //           <h5>${devTeam[0]}</h5>
-  //       </div>
-  //       <div style="width: 18rem;">
-  //           <ul class="list-group list-group-flush">
-  //             <li class="list-group-item">${devTeam[0].id}:</li>
-  //             <li class="list-group-item">${devTeam[0].email}:</li>
-  //             <li class="list-group-item">${devTeam[0].officeNum}</li>
-  //           </ul>
-  //       </div>
-  //     </div>`
-  // }
- template = ``
+ 
+ template = ``;
+
   devTeam.forEach(element => {
     if(element.getRole() === 'Manager'){
     template +=
@@ -225,7 +212,60 @@ const generateHTML = (devTeam) =>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" href="./style.css">
+      <style>
+      body {
+        background: #8e9eab;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        height: 75vh;
+        background: #8e9eab;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    }
+    
+    .card {
+    border-radius: 10px;
+    }
+    
+    .card-body {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+    
+    .title-color {
+        background-color: #0093E9;
+        color: white;
+        /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+    }
+    
+    .list-group {
+        margin:10px;
+        border: solid gray;
+    }
+    
+    footer {
+        text-align: center;
+        
+    }
+      </style>
       <title>Document</title>
   </head>
   <body>
