@@ -80,7 +80,7 @@ const intQuestions = [
 },
 {
   type: 'input',
-  name: 'github',
+  name: 'school',
   message: 'Enter the intern\'s school:'
 },
 ];
