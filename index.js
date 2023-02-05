@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Employee = require('./classes/employee');
+//const Employee = require('./classes/employee');
 const Manager = require('./classes/manager')
 const Engineer = require('./classes/engineer');
 const Intern = require('./classes/intern')
@@ -264,8 +264,14 @@ const generateHTML = (devTeam) =>
         }
         
         footer {
-            text-align: center;
-            
+          position: fixed;
+          padding-top: 5px;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+          color: white;
+          text-align: center;
         }
       </style>
       <title>My Team</title>
