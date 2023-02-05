@@ -138,7 +138,7 @@ function nextQuestion() {
         } else if(result.menu === 'Finished Building Team') {
           console.log('Team Finished!');
 
-          const htmlContent = generateHTML();
+          const htmlContent = generateHTML(devTeam);
 
           fs.writeFile('index.html', htmlContent, (err) =>
           err ? console.log(err) : console.log('Successfully created index.html!')
@@ -148,7 +148,7 @@ function nextQuestion() {
       })
 }
 
-function makeCard() {
+function makeCard(devTeam) {
   // if(devTeam[0]) {
   //   ` <div class="card" style="width: 18rem;">
   //       <div class="card-body title-color">
@@ -166,7 +166,7 @@ function makeCard() {
   // }
 
   devTeam.forEach(element => {
-    ` <div class="card" style="width: 18rem;">
+   console.log(` <div class="card" style="width: 18rem;">
         <div class="card-body title-color">
             <h4>${element.name}</h4>
             <h5>${element}</h5>
@@ -178,7 +178,7 @@ function makeCard() {
               <li class="list-group-item">${element.officeNum}</li>
             </ul>
         </div>
-      </div>`
+      </div>`)
   });
 
 }
@@ -202,7 +202,7 @@ const generateHTML = ((devTeam) =>
       <main>
   <!-- this section will have tiles that contain the employee information -->
   
-    ${makeCard()}
+    ${makeCard(devTeam)}
   
       </main>
   
