@@ -164,26 +164,60 @@ function makeCard(devTeam) {
   //       </div>
   //     </div>`
   // }
-
+ template = ``
   devTeam.forEach(element => {
-   console.log(` <div class="card" style="width: 18rem;">
+    if(element.getRole() === 'Manager'){
+    template +=
+    ` <div class="card" style="width: 18rem;">
         <div class="card-body title-color">
             <h4>${element.name}</h4>
-            <h5>${element}</h5>
+            <h5>${element.getRole()}</h5>
         </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">${element.id}:</li>
-              <li class="list-group-item">${element.email}:</li>
-              <li class="list-group-item">${element.officeNum}</li>
+              <li class="list-group-item">ID: ${element.id}</li>
+              <li class="list-group-item">Email: ${element.email}</li>
+              <li class="list-group-item">Office Number: ${element.officeNum}</li>
             </ul>
         </div>
-      </div>`)
+      </div>`
+    } else if(element.getRole() === 'Engineer') {
+      template +=
+    ` <div class="card" style="width: 18rem;">
+        <div class="card-body title-color">
+            <h4>${element.name}</h4>
+            <h5>${element.getRole()}</h5>
+        </div>
+        <div style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${element.id}</li>
+              <li class="list-group-item">Email: ${element.email}</li>
+              <li class="list-group-item">Github Username: ${element.github}</li>
+            </ul>
+        </div>
+      </div>`
+    } else if(element.getRole() === 'Intern'){
+      template +=
+    ` <div class="card" style="width: 18rem;">
+        <div class="card-body title-color">
+            <h4>${element.name}</h4>
+            <h5>${element.getRole()}</h5>
+        </div>
+        <div style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${element.id}</li>
+              <li class="list-group-item">Email: ${element.email}</li>
+              <li class="list-group-item">School: ${element.school}</li>
+            </ul>
+        </div>
+      </div>`
+    }
   });
+  return template
 
 }
 
-const generateHTML = ((devTeam) =>
+const generateHTML = (devTeam) =>
   `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -215,7 +249,7 @@ const generateHTML = ((devTeam) =>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
   </body>
-  </html>`)
+  </html>`
 
 function init() {
 
