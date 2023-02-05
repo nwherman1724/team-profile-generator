@@ -5,22 +5,28 @@ const questions = [
     {
     type: 'input',
     name: 'name',
-    message: 'What is the employees name?',
+    message: 'Enter the team manager\'s name:',
   },
   {
     type: 'input',
     name: 'id',
-    message: 'What is the employees id number?',
+    message: 'Enter the team manager\'s id number:',
   },
   {
     type: 'input',
     name: 'email',
-    message: 'What is the employees email address?',
+    message: 'Enter the team manager\'s email address:',
   },
   {
     type: 'input',
     name: 'officeNum',
-    message: 'What is the employees office number?',
+    message: 'Enter the team manager\'s office number?',
+  },
+  {
+    type: 'list',
+    name: 'menu',
+    message: 'Would you like to add another employee?',
+    choices: ['Engineer', 'Intern', 'Finished Building Team']
   },
 ];
 
@@ -44,14 +50,18 @@ const generateHTML = ({ name, id, email, officeNum, github}) =>
   <!-- this section will have tiles that contain the employee information -->
   
           <div class="card" style="width: 18rem;">
-              <div class="card-body">
-              <h5 class="card-title">${name}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <div class="card-body title-color">
+                  <h4>${name}</h4>
+                  <h5>Employee Type</h5>
+              </div>
+              <div style="width: 18rem;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">${id}:</li>
+                    <li class="list-group-item">${email}:</li>
+                    <li class="list-group-item">${officeNum}</li>
+                  </ul>
+              </div>
           </div>
-    </div>
   
       </main>
   
@@ -72,6 +82,9 @@ function init() {
   inquirer
     .prompt(questions)
       .then((answers) => {
+        // if( answers = Manager) {
+        //   mangerquest()
+        // } else if (answers = intern)
         const htmlContent = generateHTML(answers);
     
         fs.writeFile('index.html', htmlContent, (err) =>
