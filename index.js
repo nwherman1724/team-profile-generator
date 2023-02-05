@@ -1,5 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Employee = require('./classes/employee');
+const Manager = require('./classes/manager')
+const Engineer = require('./classes/engineer');
+const Intern = require('./classes/intern')
+
+const devTeam = [];
 
 const questions = [
     {
@@ -22,13 +28,125 @@ const questions = [
     name: 'officeNum',
     message: 'Enter the team manager\'s office number?',
   },
+];
+
+const employeeTypeQs = [
   {
     type: 'list',
     name: 'menu',
     message: 'Would you like to add another employee?',
     choices: ['Engineer', 'Intern', 'Finished Building Team']
   },
+]
+
+const engQuestions = [
+  {
+  type: 'input',
+  name: 'name',
+  message: 'Enter the engineer\'s name:',
+},
+{
+  type: 'input',
+  name: 'id',
+  message: 'Enter the engineer\'s id number:',
+},
+{
+  type: 'input',
+  name: 'email',
+  message: 'Enter the engineer\'s email address:',
+},
+{
+  type: 'input',
+  name: 'github',
+  message: 'Enter the engineer\'s Github username:'
+},
 ];
+
+const intQuestions = [
+  {
+  type: 'input',
+  name: 'name',
+  message: 'Enter the intern\'s name:',
+},
+{
+  type: 'input',
+  name: 'id',
+  message: 'Enter the intern\'s id number:',
+},
+{
+  type: 'input',
+  name: 'email',
+  message: 'Enter the intern\'s email address:',
+},
+{
+  type: 'input',
+  name: 'github',
+  message: 'Enter the intern\'s school:'
+},
+];
+
+function engineerQuestions(engQuestions) {
+  inquirer
+      .prompt(engQuestions)
+          .then((answers) => {
+              createEngObj(answers);
+              nextQuestion();
+          })
+}
+
+function internQuestions(intQuestions) {
+  inquirer
+      .prompt(intQuestions)
+          .then((answers) => {
+              createIntObj(answers);
+              nextQuestion();
+          })
+}
+
+function createManObj(answers) {
+
+  const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNum)
+
+  devTeam.push(manager);
+  
+}
+
+function createEngObj(answers) {
+
+  const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+
+  devTeam.push(engineer);
+  
+}
+
+function createIntObj(answers) {
+
+  const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+
+  devTeam.push(intern);
+  
+}
+
+function nextQuestion() {
+  inquirer
+    .prompt(employeeTypeQs)
+      .then(result => {
+        if( result.menu === 'Engineer') {
+          engineerQuestions(engQuestions);
+        } else if (result.menu === 'Intern') {
+          internQuestions(intQuestions);
+        } else if(result.menu === 'Finished Building Team') {
+          console.log('Team Finished!');
+
+          const htmlContent = generateHTML(answers);
+
+          fs.writeFile('index.html', htmlContent, (err) =>
+          err ? console.log(err) : console.log('Successfully created index.html!')
+        );
+        } 
+        
+      })
+}
 
 const generateHTML = ({ name, id, email, officeNum, github}) =>
   `<!DOCTYPE html>
@@ -82,14 +200,8 @@ function init() {
   inquirer
     .prompt(questions)
       .then((answers) => {
-        // if( answers = Manager) {
-        //   mangerquest()
-        // } else if (answers = intern)
-        const htmlContent = generateHTML(answers);
-    
-        fs.writeFile('index.html', htmlContent, (err) =>
-          err ? console.log(err) : console.log('Successfully created index.html!')
-        );
+        createManObj(answers);
+        nextQuestion();
       });
 
 }
