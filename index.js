@@ -268,11 +268,11 @@ const generateHTML = (devTeam) =>
             
         }
       </style>
-      <title>Document</title>
+      <title>My Team</title>
   </head>
   <body>
       <header>
-          <h1 id="title">Title</h1>
+          <h1 id="title">My Team</h1>
       </header>
   
       <main>
