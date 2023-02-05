@@ -138,7 +138,7 @@ function nextQuestion() {
         } else if(result.menu === 'Finished Building Team') {
           console.log('Team Finished!');
 
-          const htmlContent = generateHTML(answers);
+          const htmlContent = generateHTML();
 
           fs.writeFile('index.html', htmlContent, (err) =>
           err ? console.log(err) : console.log('Successfully created index.html!')
@@ -148,7 +148,42 @@ function nextQuestion() {
       })
 }
 
-const generateHTML = ({ name, id, email, officeNum, github}) =>
+function makeCard() {
+  // if(devTeam[0]) {
+  //   ` <div class="card" style="width: 18rem;">
+  //       <div class="card-body title-color">
+  //           <h4>${devTeam[0].name}</h4>
+  //           <h5>${devTeam[0]}</h5>
+  //       </div>
+  //       <div style="width: 18rem;">
+  //           <ul class="list-group list-group-flush">
+  //             <li class="list-group-item">${devTeam[0].id}:</li>
+  //             <li class="list-group-item">${devTeam[0].email}:</li>
+  //             <li class="list-group-item">${devTeam[0].officeNum}</li>
+  //           </ul>
+  //       </div>
+  //     </div>`
+  // }
+
+  devTeam.forEach(element => {
+    ` <div class="card" style="width: 18rem;">
+        <div class="card-body title-color">
+            <h4>${element.name}</h4>
+            <h5>${element}</h5>
+        </div>
+        <div style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">${element.id}:</li>
+              <li class="list-group-item">${element.email}:</li>
+              <li class="list-group-item">${element.officeNum}</li>
+            </ul>
+        </div>
+      </div>`
+  });
+
+}
+
+const generateHTML = ((devTeam) =>
   `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -167,19 +202,7 @@ const generateHTML = ({ name, id, email, officeNum, github}) =>
       <main>
   <!-- this section will have tiles that contain the employee information -->
   
-          <div class="card" style="width: 18rem;">
-              <div class="card-body title-color">
-                  <h4>${name}</h4>
-                  <h5>Employee Type</h5>
-              </div>
-              <div style="width: 18rem;">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">${id}:</li>
-                    <li class="list-group-item">${email}:</li>
-                    <li class="list-group-item">${officeNum}</li>
-                  </ul>
-              </div>
-          </div>
+    ${makeCard()}
   
       </main>
   
@@ -192,7 +215,7 @@ const generateHTML = ({ name, id, email, officeNum, github}) =>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
   </body>
-  </html>`
+  </html>`)
 
 function init() {
 
