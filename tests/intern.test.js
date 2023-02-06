@@ -9,9 +9,15 @@
 const Intern = require('../classes/intern')
 
 describe('Intern', () => {
-   it('', ()=> {
+   it('has a school', ()=> {
     const intern = new Intern();
 
     expect(new Intern().school).toBe(this.school);
    })
+
+   it('has a methods that returns the role', () => {
+      const intern = new Intern();
+
+      expect(new Intern().getRole()).toBe('Intern')
+     })
 })
