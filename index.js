@@ -156,9 +156,12 @@ function makeCard(devTeam) {
     if(element.getRole() === 'Manager'){
     template +=
     ` <div class="card" style="width: 18rem;">
-        <div class="card-body title-color">
+        <div class="card-body title-color" style="display: flex;">
+          <span style="padding-right: 15px;"><img src="./photo/take 4.png" alt=""></span>
+          <div>
             <h4>${element.getName()}</h4>
             <h5>${element.getRole()}</h5>
+          </div>
         </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
@@ -171,10 +174,13 @@ function makeCard(devTeam) {
     } else if(element.getRole() === 'Engineer') {
       template +=
     ` <div class="card" style="width: 18rem;">
-        <div class="card-body title-color">
-            <h4>${element.getName()}</h4>
-            <h5>${element.getRole()}</h5>
+      <div class="card-body title-color" style="display: flex;">
+        <span style="padding-right: 15px;"><img src="./photo/take 4.png" alt=""></span>
+        <div>
+          <h4>${element.getName()}</h4>
+          <h5>${element.getRole()}</h5>
         </div>
+      </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${element.getId()}</li>
@@ -186,10 +192,13 @@ function makeCard(devTeam) {
     } else if(element.getRole() === 'Intern'){
       template +=
     ` <div class="card" style="width: 18rem;">
-        <div class="card-body title-color">
-            <h4>${element.getName()}</h4>
-            <h5>${element.getRole()}</h5>
+      <div class="card-body title-color" style="display: flex;">
+        <span style="padding-right: 15px;"><img src="./photo/take 4.png" alt=""></span>
+        <div>
+          <h4>${element.getName()}</h4>
+          <h5>${element.getRole()}</h5>
         </div>
+      </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${element.getId()}</li>
