@@ -18,4 +18,10 @@ describe('Manager', () => {
 
       expect(new Manager().getRole()).toBe('Manager')
      })
+
+   it('has a methods that returns the office number', () => {
+      const manager = new Manager();
+
+      expect(new Manager().getOfficeNum()).toBe(this.officeNum)
+      })
 })

@@ -20,4 +20,10 @@ describe('Intern', () => {
 
       expect(new Intern().getRole()).toBe('Intern')
      })
+
+   it('has a methods that returns the role', () => {
+      const intern = new Intern();
+
+      expect(new Intern().getSchool()).toBe(this.school)
+     })
 })

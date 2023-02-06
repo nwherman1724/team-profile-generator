@@ -20,4 +20,10 @@ describe('Engineer', () => {
 
       expect(new Engineer().getRole()).toBe('Engineer')
      })
+
+   it('has a methods that returns the role', () => {
+      const engineer = new Engineer();
+
+      expect(new Engineer().getGithub()).toBe(this.github)
+     })
 })

@@ -157,14 +157,14 @@ function makeCard(devTeam) {
     template +=
     ` <div class="card" style="width: 18rem;">
         <div class="card-body title-color">
-            <h4>${element.name}</h4>
+            <h4>${element.getName()}</h4>
             <h5>${element.getRole()}</h5>
         </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${element.id}</li>
-              <li class="list-group-item">Email: ${element.email}</li>
-              <li class="list-group-item">Office Number: ${element.officeNum}</li>
+              <li class="list-group-item">ID: ${element.getId()}</li>
+              <li class="list-group-item">Email: ${element.getEmail()}</li>
+              <li class="list-group-item">Office Number: ${element.getOfficeNum()}</li>
             </ul>
         </div>
       </div>`
@@ -172,14 +172,14 @@ function makeCard(devTeam) {
       template +=
     ` <div class="card" style="width: 18rem;">
         <div class="card-body title-color">
-            <h4>${element.name}</h4>
+            <h4>${element.getName()}</h4>
             <h5>${element.getRole()}</h5>
         </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${element.id}</li>
-              <li class="list-group-item">Email: ${element.email}</li>
-              <li class="list-group-item">Github Username: ${element.github}</li>
+              <li class="list-group-item">ID: ${element.getId()}</li>
+              <li class="list-group-item">Email: ${element.getEmail()}</li>
+              <li class="list-group-item">Github Username: ${element.getGithub()}</li>
             </ul>
         </div>
       </div>`
@@ -187,14 +187,14 @@ function makeCard(devTeam) {
       template +=
     ` <div class="card" style="width: 18rem;">
         <div class="card-body title-color">
-            <h4>${element.name}</h4>
+            <h4>${element.getName()}</h4>
             <h5>${element.getRole()}</h5>
         </div>
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${element.id}</li>
-              <li class="list-group-item">Email: ${element.email}</li>
-              <li class="list-group-item">School: ${element.school}</li>
+              <li class="list-group-item">ID: ${element.getId()}</li>
+              <li class="list-group-item">Email: ${element.getEmail()}</li>
+              <li class="list-group-item">School: ${element.getSchool()}</li>
             </ul>
         </div>
       </div>`
