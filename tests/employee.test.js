@@ -13,3 +13,19 @@
 // getEmail()
 
 // getRole() // Returns 'Employee'
+
+const Employee = require('../classes/employee')
+
+describe('Employee', () => {
+   it('has a name, id, and email property', () => {
+    const employee = new Employee();
+
+    expect(new Employee().name).toBe(this.name);
+    expect(new Employee().id).toBe(this.id);
+    expect(new Employee().email).toBe(this.email);
+   });
+
+   it('has a methods that return the name, id, email, and role', () => {
+    const employee = new Employee();
+   })
+})
