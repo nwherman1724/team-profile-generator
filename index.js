@@ -245,6 +245,7 @@ const generateHTML = (devTeam) =>
             justify-content: center;
             align-items: center;
             padding: 50px;
+            margin-bottom: 200px;
             height: 75vh;
             background: #8e9eab;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
