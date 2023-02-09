@@ -46,8 +46,11 @@ THEN I exit the application, and the HTML is generated
   inquirer@8.2.4
 
   ## :zap: Usage
-  not yet
-      
+ 
+[appDemo.webm](https://user-images.githubusercontent.com/93491747/217803157-3a710ab6-2009-4944-bd29-0d1850e5fa51.webm)
+
+[appSuccess.webm](https://user-images.githubusercontent.com/93491747/217803220-9dbe85e7-4514-4778-8eda-a1062b0c78a5.webm)
+
   ## :lock: License
   
   This project is cover under the MIT License.
@@ -56,7 +59,8 @@ THEN I exit the application, and the HTML is generated
   Ask Nicely
 
   ## :chart_with_upwards_trend: Tests
-  tests still in development
+  
+  [runTests.webm](https://user-images.githubusercontent.com/93491747/217803336-ee859dac-ed68-4cac-b978-46bd1f41cc29.webm)
   
   ## :question: Questions
   Github Username: nwherman1724@gmail.com
