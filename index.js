@@ -166,7 +166,7 @@ function makeCard(devTeam) {
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${element.getId()}</li>
-              <li class="list-group-item">Email: ${element.getEmail()}</li>
+              <li class="list-group-item">Email: <a href="mailto:${element.getEmail()}">${element.getEmail()}</a></li>
               <li class="list-group-item">Office Number: ${element.getOfficeNum()}</li>
             </ul>
         </div>
@@ -184,8 +184,8 @@ function makeCard(devTeam) {
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${element.getId()}</li>
-              <li class="list-group-item">Email: ${element.getEmail()}</li>
-              <li class="list-group-item">Github Username: ${element.getGithub()}</li>
+              <li class="list-group-item">Email: <a href="mailto:${element.getEmail()}">${element.getEmail()}</a></li>
+              <li class="list-group-item">Github Username: <a href="https://github.com/${element.getGithub()}" target="_blank">${element.getGithub()}</a></li>
             </ul>
         </div>
       </div>`
@@ -202,7 +202,7 @@ function makeCard(devTeam) {
         <div style="width: 18rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${element.getId()}</li>
-              <li class="list-group-item">Email: ${element.getEmail()}</li>
+              <li class="list-group-item">Email: <a href="mailto:${element.getEmail()}">${element.getEmail()}</a></li>
               <li class="list-group-item">School: ${element.getSchool()}</li>
             </ul>
         </div>
